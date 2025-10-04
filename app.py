@@ -4,18 +4,18 @@ from video_search_tool import video_search_tool
 from transcription_tool import transcription_tool
 from knowledge_base import save_transcript
 
-# Ensure knowledge_base folder exists
+# Ensure folder exists
 os.makedirs("knowledge_base", exist_ok=True)
 
-# Page config
 st.set_page_config(page_title="AI Video Agent", layout="centered")
 st.title("🤖 AI Video Agent")
-st.write("Ask anything — I'll find a YouTube video and transcribe it for you!")
+st.write("Ask anything — I'll find a YouTube video and transcribe it!")
 
-# Input box
+# Input + Button
 query = st.text_input("❓ Your question:", placeholder="e.g., What is photosynthesis?")
+run = st.button("🔍 Get Transcript")
 
-# Ambiguous terms fix (so 'python' = programming, not snake)
+# Ambiguous terms mapping
 ambiguous_terms = {
     "python": "python programming language",
     "java": "Java programming language",
@@ -23,36 +23,31 @@ ambiguous_terms = {
     "mercury": "mercury element",
     "apple": "Apple Inc. technology",
     "tesla": "Tesla electric cars",
-    "swift": "Swift programming language",
-    "ruby": "Ruby programming language"
 }
 
-if st.button("🔍 Get Transcript"):
+# Only run when button is clicked AND query is not empty
+if run:
     if not query.strip():
-        st.warning("Please enter a question.")
+        st.warning("⚠️ Please enter a question.")
     else:
         try:
-            # Enhance query if it's ambiguous
             enhanced_query = ambiguous_terms.get(query.lower().strip(), query)
             
             with st.spinner(f"🔍 Searching YouTube for: '{enhanced_query}'..."):
                 video_url = video_search_tool(enhanced_query)
             
-            # Show video preview
-            st.video(video_url)
+            st.video(video_url)  # Show video
             
             with st.spinner("🎙️ Transcribing video..."):
                 transcript = transcription_tool(video_url)
             
-            # Save transcript
-            filename = save_transcript(query, video_url, transcript)
+            # Save (optional in cloud, but safe)
+            save_transcript(query, video_url, transcript)
             
-            # Show result
-            st.success("✅ Transcription complete!")
+            st.success("✅ Done!")
             st.subheader("📝 Transcript")
             st.text_area("Full transcript:", transcript, height=300)
             
-            # Download button
             st.download_button(
                 "📥 Download Transcript",
                 transcript,
@@ -62,4 +57,4 @@ if st.button("🔍 Get Transcript"):
             
         except Exception as e:
             st.error(f"💥 Error: {str(e)}")
-            st.info("Tip: Try a more specific question like 'photosynthesis for kids' or 'Python for beginners'.")
+            st.info("💡 Tip: Try a more specific query like 'photosynthesis for kids'.")
