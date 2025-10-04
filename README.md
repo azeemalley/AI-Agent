@@ -4,7 +4,6 @@ An intelligent AI agent that **searches YouTube for relevant videos** based on y
 
 > Ask: _"What is machine learning?"_ → Get a **video + full transcript** instantly.
 
-![AI Video Agent Demo](https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/)
 ---
 
 ## ✨ Features
@@ -20,7 +19,7 @@ An intelligent AI agent that **searches YouTube for relevant videos** based on y
 ## 🚀 Live Demo
 
 Try the live web app here:  
-👉 **[AI Video Agent on Streamlit Cloud][((https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/))](https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/)**  
+👉 **(https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/)**  
 
 
 ---
