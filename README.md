@@ -4,8 +4,7 @@ An intelligent AI agent that **searches YouTube for relevant videos** based on y
 
 > Ask: _"What is machine learning?"_ → Get a **video + full transcript** instantly.
 
-![AI Video Agent Demo]([https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white](https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/))
-
+![AI Video Agent Demo](https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/)
 ---
 
 ## ✨ Features
@@ -21,7 +20,7 @@ An intelligent AI agent that **searches YouTube for relevant videos** based on y
 ## 🚀 Live Demo
 
 Try the live web app here:  
-👉 **[AI Video Agent on Streamlit Cloud]([https://your-username-ai-video-agent.streamlit.app](https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/))**  
+👉 **[AI Video Agent on Streamlit Cloud][((https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/))](https://ai-agent-7mkxjv5dsnouxvpz7qh6hb.streamlit.app/)**  
 
 
 ---
@@ -35,16 +34,3 @@ Try the live web app here:
 
 ---
 
-## 📥 How to Run Locally
-
-### Prerequisites
-- Python 3.9+
-- [SerpApi Account](https://serpapi.com) (free tier available)
-- [Google Gemini API Key](https://aistudio.google.com/app/apikey)
-
-### Steps
-
-1. **Clone the repo**
-   ```bash
-   git clone [https://github.com/your-username/ai-video-agent.git](https://github.com/azeemalley/AI-Agent)
-   cd agent
